@@ -1583,9 +1583,13 @@ function write_survey(this_survey, this_id) {
     response_check(this);
   });
 
-  $("#" + this_id).show(0); //scroll to top
-  $("#" + this_id).css({
-    "height": "90%"
+  //scroll to top
+  $("#" + this_id).show(0); 
+
+  //(hopeful) Firefox fix
+  $("#" + this_id).animate({
+    "height": window.innerHeight + "px",
+    "top": (parseFloat(window.innerHeight/2)) + "px"
   });
 
 
